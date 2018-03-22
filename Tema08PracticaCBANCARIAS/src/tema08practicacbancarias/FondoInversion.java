@@ -12,7 +12,41 @@ package tema08practicacbancarias;
 public class FondoInversion extends Cuentas {
 
     public FondoInversion(int numeroCuenta, double saldo, double interes, double comision) {
-        super(numeroCuenta, saldo, interes, comision);
+        super(numeroCuenta, saldo, interes=1.34, comision);
+        
     }
+
+    public int getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(int numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getInteres() {
+        return interes;
+    }
+
+    public void setInteres(double interes) {
+        this.interes = interes;
+    }
+
+    public double getComision() {
+        return comision;
+    }
+
+    public void setComision(double comision) {
+        this.comision = comision;
+    }
+    
     
 }

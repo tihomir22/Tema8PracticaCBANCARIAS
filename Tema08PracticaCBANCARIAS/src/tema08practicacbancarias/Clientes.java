@@ -12,12 +12,13 @@ import java.util.ArrayList;
  * @author sportak
  */
 public class Clientes {
+
     private String dni;
     private String nombre;
     private String apellidos;
     private String direccion;
     private int telefono;
-    private ArrayList<Cuentas>listaCuentas=new ArrayList<Cuentas>();
+    private ArrayList<Cuentas> listaCuentas = new ArrayList<Cuentas>();
 
     public Clientes(String dni, String nombre, String apellidos, String direccion, int telefono) {
         this.dni = dni;
@@ -74,6 +75,17 @@ public class Clientes {
     public void setListaCuentas(ArrayList<Cuentas> listaCuentas) {
         this.listaCuentas = listaCuentas;
     }
-    
-    
+
+    public void mostrarListaCuentas() {
+        for (int i = 0; i < this.listaCuentas.size(); i++) {
+            System.out.println(this.listaCuentas.get(i).toString());
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre " + this.nombre + "\t" + "Apellidos " + this.apellidos + "\t" + "DNI " + this.dni + "\t" + "Direccion " + this.direccion + "\t" + "Telefono " + this.telefono + "\t" + "Numero cuentas " + this.listaCuentas.size();
+    }
+
 }
