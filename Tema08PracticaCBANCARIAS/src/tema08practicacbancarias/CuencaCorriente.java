@@ -12,7 +12,7 @@ package tema08practicacbancarias;
 public class CuencaCorriente extends Cuentas {
 
     public CuencaCorriente(int numeroCuenta, double saldo, double interes, double comision) {
-        super(numeroCuenta, saldo, interes=1.10, comision);
+        super(numeroCuenta, saldo, interes = 1.10, comision);
     }
 
     public int getNumeroCuenta() {
@@ -46,9 +46,5 @@ public class CuencaCorriente extends Cuentas {
     public void setComision(double comision) {
         this.comision = comision;
     }
-    
-    
 
-   
-    
 }

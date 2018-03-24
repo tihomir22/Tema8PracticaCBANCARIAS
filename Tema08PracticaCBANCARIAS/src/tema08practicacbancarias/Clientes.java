@@ -83,6 +83,19 @@ public class Clientes {
 
     }
 
+    public Cuentas buscarCuenta(int num) {
+        for (int i = 0; i < this.listaCuentas.size(); i++) {
+            if (this.listaCuentas.get(i).getNumeroCuenta() == num) {
+                return this.listaCuentas.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void añadirCuenta(Cuentas c) {
+        this.listaCuentas.add(c);
+    }
+
     @Override
     public String toString() {
         return "Nombre " + this.nombre + "\t" + "Apellidos " + this.apellidos + "\t" + "DNI " + this.dni + "\t" + "Direccion " + this.direccion + "\t" + "Telefono " + this.telefono + "\t" + "Numero cuentas " + this.listaCuentas.size();

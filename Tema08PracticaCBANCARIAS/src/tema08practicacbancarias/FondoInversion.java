@@ -12,8 +12,8 @@ package tema08practicacbancarias;
 public class FondoInversion extends Cuentas {
 
     public FondoInversion(int numeroCuenta, double saldo, double interes, double comision) {
-        super(numeroCuenta, saldo, interes=1.34, comision);
-        
+        super(numeroCuenta, saldo, interes = 1.34, comision);
+
     }
 
     public int getNumeroCuenta() {
@@ -47,6 +47,16 @@ public class FondoInversion extends Cuentas {
     public void setComision(double comision) {
         this.comision = comision;
     }
-    
-    
+
+    @Override
+    public boolean comprobarSaldo(double cantidad) {
+
+        if (this.saldo - cantidad > -500) {
+            return true;
+        }
+
+        System.out.println("Cuenta bloqueada");
+        return false;
+    }
+
 }

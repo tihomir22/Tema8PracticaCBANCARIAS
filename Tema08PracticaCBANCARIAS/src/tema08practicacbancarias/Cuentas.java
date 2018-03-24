@@ -10,6 +10,7 @@ package tema08practicacbancarias;
  * @author sportak
  */
 public class Cuentas {
+
     protected int numeroCuenta;
     protected double saldo;
     protected double interes;
@@ -19,7 +20,8 @@ public class Cuentas {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
         this.interes = interes;
-        this.comision = comision;
+        this.comision = 0.6;
+
     }
 
     public int getNumeroCuenta() {
@@ -53,13 +55,31 @@ public class Cuentas {
     public void setComision(double comision) {
         this.comision = comision;
     }
-    
+
+    public boolean comprobarSaldo(double cantidad) {
+        if (this.saldo - cantidad < 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public void ingresar(double cantidad) {
+        this.saldo = this.saldo + cantidad;
+    }
+
+    public void retirar(double cantidad) {
+        this.saldo = this.saldo - cantidad;
+    }
+
+    public void revisionMensual() {
+
+        this.saldo = this.saldo * this.interes - this.comision;
+        System.out.println("Revision realizada");
+    }
+
     @Override
     public String toString() {
-        return "NumCuenta "+this.numeroCuenta+"\t"+"Saldo "+this.saldo+"\t"+"Interes "+this.interes+"\t"+"Comision "+this.comision+"\t";
+        return "NumCuenta " + this.numeroCuenta + "\t" + "Saldo " + this.saldo + "\t" + "Interes " + this.interes + "\t" + "Comision " + this.comision + "\t";
     }
-    
-    
-    
-    
+
 }

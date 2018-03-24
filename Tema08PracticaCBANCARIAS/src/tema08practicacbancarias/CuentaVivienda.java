@@ -9,10 +9,10 @@ package tema08practicacbancarias;
  *
  * @author sportak
  */
-public class CuentaVivienda extends Cuentas{
+public class CuentaVivienda extends Cuentas {
 
     public CuentaVivienda(int numeroCuenta, double saldo, double interes, double comision) {
-        super(numeroCuenta, saldo, interes=1.20, comision);
+        super(numeroCuenta, saldo, interes = 1.20, comision = 0);
     }
 
     public int getNumeroCuenta() {
@@ -46,6 +46,17 @@ public class CuentaVivienda extends Cuentas{
     public void setComision(double comision) {
         this.comision = comision;
     }
-    
-    
+
+    @Override
+    public void revisionMensual() {
+        this.saldo = this.saldo * this.interes;
+        System.out.println("Revision realizada");
+    }
+
+    @Override
+    public boolean comprobarSaldo(double cantidad) {
+        System.out.println("No se puede sacar dinero");
+        return false;
+    }
+
 }

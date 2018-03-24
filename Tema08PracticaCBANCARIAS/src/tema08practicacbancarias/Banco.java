@@ -6,6 +6,7 @@
 package tema08practicacbancarias;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -47,11 +48,9 @@ public class Banco {
     }
 
     public void mostrarClientesTodos() {
-        for (int i = 0; i < this.listaClientes.size(); i++) {
-            for (int j = 0; j < this.listaClientes.size(); j++) {
+        for (int i = 0; i < this.listaClientes.size(); i++) { //for que se usa para recorrer clientes
+            System.out.println(this.listaClientes.get(i).toString());
 
-                this.listaClientes.get(i).getListaCuentas().get(j).toString();
-            }
         }
     }
 
@@ -66,6 +65,16 @@ public class Banco {
 
     public void añadirCliente(Clientes c) {
         this.listaClientes.add(c);
+    }
+
+    public boolean contieneCliente(String n) {
+        for (int i = 0; i < this.listaClientes.size(); i++) {
+            if (this.listaClientes.get(i).getNombre().equalsIgnoreCase(n)) {
+                
+                return false;
+            }
+        }
+        return true;
     }
 
 }
