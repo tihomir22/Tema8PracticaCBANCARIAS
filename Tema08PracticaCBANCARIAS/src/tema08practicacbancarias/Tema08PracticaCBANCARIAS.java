@@ -40,7 +40,7 @@ public class Tema08PracticaCBANCARIAS {
             try {
                 opcion = teclado.nextInt();
             } catch (InputMismatchException e3) {
-                System.out.println("Error 003: No introduciste un numero!");
+                System.out.println("Error 003: No introduciste un numero!" + e3.getMessage());
                 break;
             }
             switch (opcion) {
